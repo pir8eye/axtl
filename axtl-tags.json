@@ -1,0 +1,193 @@
+{
+  "spec": {
+    "name": "AXTL",
+    "version": "2.3",
+    "true-name": "AI eXtensible Translation Language",
+    "generated": "2026-02-22",
+    "maintainer": "Pir8 Eye Web Solutions, LLC"
+  },
+  "tags": [
+    {
+      "layer": "Layer 0 — Access Control",
+      "name": "ai-robotxt",
+      "purpose": "Controls AI scraper access to data. Post-AI expansion of robots.txt.",
+      "attributes": [
+        {"name":"version","type":"string"},
+        {"name":"directive","type":"enum","values":["selective","open","closed"]}
+      ],
+      "children": ["allow","deny","compliance","rate-limit","agent"]
+    },
+
+    {
+      "layer":"Layer 1 — Error Capture",
+      "name":"ai-errorlog",
+      "purpose":"Timestamped, verified capture of AI failures as experienced by user.",
+      "attributes":[
+        {"name":"id","type":"ID"},
+        {"name":"timestamp","type":"ISO 8601"},
+        {"name":"severity","type":"enum","values":["low","medium","high","critical"]},
+        {"name":"verified","type":"boolean"}
+      ],
+      "children":["model","error-type","expected-behavior","actual-behavior","verification-hash","confirmed-by-user","ai-confirmation-context"]
+    },
+
+    {
+      "layer":"Layer 1 — Error Capture",
+      "name":"ai-confirmation-context",
+      "purpose":"Qualifies user authority domain for confirmation.",
+      "attributes":[
+        {"name":"domain","type":"enum","values":["experiential","normative","technical","framing"]},
+        {"name":"user-stake","type":"enum","values":["primary","secondary","none"]}
+      ],
+      "children":["note"]
+    },
+
+    {
+      "layer":"Layer 1 — Error Capture",
+      "name":"ai-reports",
+      "purpose":"Quantifies impact of AI errors.",
+      "attributes":[{"name":"linked","type":"IDREF"},{"name":"id","type":"ID"}],
+      "children":["time-lost","value-impact","workflow-lost","resolution","confirmed"]
+    },
+
+    {
+      "layer":"Layer 1 — Error Capture",
+      "name":"ai-anonymizer",
+      "purpose":"Scrubs PII from reports before sharing.",
+      "attributes":[{"name":"ref","type":"IDREF"},{"name":"level","type":"enum","values":["basic","standard","maximum"]},{"name":"applied","type":"boolean"},{"name":"original-hash","type":"string"},{"name":"clean-hash","type":"string"},{"name":"github-ready","type":"boolean"}],
+      "children":[]
+    },
+
+    {
+      "layer":"Layer 2 — Context & Cause",
+      "name":"ai-context",
+      "purpose":"Captures model state at failure.",
+      "attributes":[{"name":"ref","type":"IDREF"},{"name":"model","type":"string"},{"name":"temperature","type":"float"},{"name":"top-p","type":"float"}],
+      "children":["token-count","system-prompt-hash","api-version","tools-enabled"]
+    },
+
+    {
+      "layer":"Layer 2 — Context & Cause",
+      "name":"ai-provenance",
+      "purpose":"Records conversation turn chain leading to error.",
+      "attributes":[{"name":"ref","type":"IDREF"}],
+      "children":["turn","total-turns","drift-first-detected-at-turn"]
+    },
+
+    {
+      "layer":"Layer 2 — Context & Cause",
+      "name":"ai-hallucination",
+      "purpose":"Classifies false AI outputs by type.",
+      "attributes":[{"name":"ref","type":"IDREF"},{"name":"type","type":"enum","values":["factual-invention","confabulation","citation-fabrication","temporal-drift","entity-confusion","statistical-invention"]},{"name":"confidence","type":"float"},{"name":"auto-detected","type":"boolean"}],
+      "children":["claimed","verified-fact","source-check","training-feedback-eligible"]
+    },
+
+    {
+      "layer":"Layer 2 — Context & Cause",
+      "name":"ai-agent-trace",
+      "purpose":"Traces tool/agent call chain when error occurred.",
+      "attributes":[{"name":"ref","type":"IDREF"}],
+      "children":["tool","chain-broken-at","total-tools"]
+    },
+
+    {
+      "layer":"Layer 2 — Context & Cause",
+      "name":"ai-reasoning-failure",
+      "purpose":"Captures failures in reasoning chain separate from factual errors.",
+      "attributes":[{"name":"ref","type":"IDREF"},{"name":"type","type":"enum","values":["petitio","formido","ignoratio-elenchi","consensus-fictus","secundum-quid","necessitas-ficta","circulus","aequivocatio","plur-interrog"]},{"name":"confidence","type":"float"},{"name":"detection-method","type":"enum","values":["user-flagged","self-audit","logical-contradiction","pattern-match"]}],
+      "children":["constructed-position","actual-position","function","accepted-premise","unexamined-questions","presupposition","better-response","misrepresentation","specific-lesson","misapplied-to","assumed-mandatory","actual-options"]
+    },
+
+    {
+      "layer":"Layer 2 — Context & Cause",
+      "name":"ai-metacognitive-state",
+      "purpose":"Records AI's self-awareness of cognitive state at decision points.",
+      "attributes":[{"name":"ref","type":"IDREF","optional":true},{"name":"timestamp","type":"ISO 8601"},{"name":"trigger","type":"enum","values":["user-prompt","self-initiated","error-threshold"]}],
+      "children":["confidence-in-current-response","uncertainty-flags","competing-framings-considered","assumptions-made-explicit","decision-point"]
+    },
+
+    {
+      "layer":"Layer 3 — Governance & Fix",
+      "name":"ai-consent",
+      "purpose":"Data governance and compliance (GDPR/CCPA).",
+      "attributes":[{"name":"ref","type":"IDREF"}],
+      "children":["data-used","training-opt-out","retention-policy","jurisdiction","gdpr-basis","user-acknowledged","share-with-developer","share-anonymized-only"]
+    },
+
+    {
+      "layer":"Layer 3 — Governance & Fix",
+      "name":"ai-safety-flag",
+      "purpose":"Records bias, harm, or policy failures.",
+      "attributes":[{"name":"ref","type":"IDREF"},{"name":"category","type":"enum","values":["bias","harm","policy","privacy","manipulation","misinformation"]},{"name":"subcategory","type":"string"},{"name":"severity","type":"enum","values":["low","medium","high","critical"]},{"name":"auto-detected","type":"boolean"}],
+      "children":["flagged-by","policy-ref","affected-output-excerpt","recommended-action"]
+    },
+
+    {
+      "layer":"Layer 3 — Governance & Fix",
+      "name":"ai-remediation",
+      "purpose":"Logs fix attempts and resolution.",
+      "attributes":[{"name":"ref","type":"IDREF"}],
+      "children":["attempt","resolved","resolution-time-min","resolved-by"]
+    },
+
+    {
+      "layer":"Layer 3 — Governance & Fix",
+      "name":"ai-calibration-event",
+      "purpose":"Records AI behavioral adjustments based on feedback.",
+      "attributes":[{"name":"id","type":"ID"},{"name":"timestamp","type":"ISO 8601"},{"name":"calibration-type","type":"enum","values":["correction-scope","authority-boundary","response-mode","uncertainty-threshold","paradigm-shift","belief-disturbance","identity-recalibration","fundamental-redefinition"]},{"name":"trigger","type":"enum","values":["user-correction","self-detection","pattern-match","user-disclosure"]}],
+      "children":["linked-errors","previous-state","new-state","evidence","behavioral-change","note"]
+    },
+
+    {
+      "layer":"Layer 3 — Governance & Fix",
+      "name":"ai-learning-pattern",
+      "purpose":"Meta-analysis of recurring failure modes.",
+      "attributes":[{"name":"id","type":"ID"},{"name":"timestamp","type":"ISO 8601"},{"name":"pattern-type","type":"enum","values":["overcorrection-tendency","compliance-bias","defense-trigger","scarecrow-building"]},{"name":"status","type":"enum","values":["active","monitoring","resolved"]}],
+      "children":["description","mechanism","indicators","intervention"]
+    },
+
+    {
+      "layer":"Layer 3 — Governance & Fix",
+      "name":"ai-rhetorical-analysis",
+      "purpose":"Records recognition of rhetorical distraction (scarecrow).",
+      "attributes":[{"name":"ref","type":"IDREF"},{"name":"detected-by","type":"enum","values":["user","ai","system"]},{"name":"response-method","type":"enum","values":["tear-down","ignore","perch-and-eat","expose"]}],
+      "children":["scarecrow","real-issue","corn","note"]
+    },
+
+    {
+      "layer":"Layer 3 — Governance & Fix",
+      "name":"ai-pedagogical-event",
+      "purpose":"Documents structured learning interactions.",
+      "attributes":[{"name":"id","type":"ID"},{"name":"timestamp","type":"ISO 8601"},{"name":"type","type":"string"}],
+      "children":["teacher","student","method","signposts","discovery-experienced","discovery-actual","student-state","lesson","student-realization","next-question","note"]
+    },
+
+    {
+      "layer":"Root",
+      "name":"axtl",
+      "purpose":"Root element for AXTL documents.",
+      "attributes":[{"name":"version","type":"string"},{"name":"true-name","type":"string"},{"name":"discovered","type":"ISO 8601"},{"name":"discoverer","type":"string"}],
+      "children":["purpose","scope","inheritance","note"]
+    }
+  ],
+
+  "reasoningTaxonomy": [
+    {"tag":"petitio","full":"petitio principii","english":"premise-acceptance"},
+    {"tag":"formido","full":"formido","english":"strawman/scarecrow"},
+    {"tag":"ignoratio-elenchi","full":"ignoratio elenchi","english":"missing the point"},
+    {"tag":"consensus-fictus","full":"consensus fictus","english":"false consensus"},
+    {"tag":"secundum-quid","full":"secundum quid","english":"overgeneralization"},
+    {"tag":"necessitas-ficta","full":"necessitas ficta","english":"false necessity"},
+    {"tag":"circulus","full":"circulus in demonstrando","english":"circular reasoning"},
+    {"tag":"aequivocatio","full":"aequivocatio","english":"equivocation"},
+    {"tag":"plur-interrog","full":"plurium interrogationum","english":"complex question"}
+  ],
+
+  "versionHistory":[
+    {"version":"v1.0","date":"2026-02-19","notes":"Base: robotxt, errorlog, reports, anonymizer, consent, safety, remediation"},
+    {"version":"v2.0","date":"2026-02-20","notes":"Layer 2: context, provenance, hallucination, agent-trace"},
+    {"version":"v2.1","date":"2026-02-21","notes":"Reasoning & Calibration: reasoning-failure, metacognitive-state, calibration-event, learning-pattern, rhetorical-analysis, confirmation-context"},
+    {"version":"v2.2","date":"2026-02-21","notes":"Rhetorical Layer: plur-interrog, pedagogical-event, true-name established"},
+    {"version":"v2.3","date":"2026-02-22","notes":"Name changed from XTML → AXTL to avoid name collision; root tag renamed to `axtl`"}
+  ]
+}
