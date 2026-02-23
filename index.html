@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AXTL v2.3 — Complete Tag Reference</title>
+  <title>AXTL v2.3 — AI eXtensible Translation Language Documentation</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,25 +12,875 @@
       <img id="logo" src="assets/logo.png" alt="AXTL logo">
       <div>
         <h1>AXTL: AI eXtensible Translation Language</h1>
-        <p class="subtitle">Complete Tag Reference — v2.3</p>
+        <p class="subtitle">Complete Documentation — v2.3</p>
       </div>
-    </div>
-    <div class="controls">
-      <input id="search" placeholder="Search tags, attributes, or descriptions..." />
-      <button id="download-json">Download JSON</button>
-      <button id="copy-json">Copy JSON</button>
     </div>
   </header>
 
+  <nav id="sidebar">
+    <div class="nav-section">
+      <h3>Getting Started</h3>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#structure">Document Structure</a></li>
+        <li><a href="#layers">Layer System</a></li>
+      </ul>
+    </div>
+    <div class="nav-section">
+      <h3>Specification Layers</h3>
+      <ul>
+        <li><a href="#layer-0">Layer 0: Access Control</a></li>
+        <li><a href="#layer-1">Layer 1: Error Capture</a></li>
+        <li><a href="#layer-2">Layer 2: Context & Cause</a></li>
+        <li><a href="#layer-3">Layer 3: Governance & Fix</a></li>
+        <li><a href="#root">Root Element</a></li>
+      </ul>
+    </div>
+    <div class="nav-section">
+      <h3>Reference</h3>
+      <ul>
+        <li><a href="#reasoning-taxonomy">Reasoning Taxonomy</a></li>
+        <li><a href="#version-history">Version History</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <main>
-    <nav id="layers"></nav>
-    <section id="tags"></section>
+    <!-- OVERVIEW SECTION -->
+    <section id="overview">
+      <h2>Overview</h2>
+      <p>AXTL (AI eXtensible Translation Language) is a comprehensive XML-based specification designed to capture, document, and analyze AI system interactions, failures, and learning processes. It provides a structured framework for recording error states, contextual information, governance compliance, and AI behavioral adjustments.</p>
+      <p><strong>Version:</strong> 2.3 | <strong>Generated:</strong> 2026-02-22 | <strong>Maintainer:</strong> Pir8 Eye Web Solutions, LLC</p>
+    </section>
+
+    <!-- STRUCTURE SECTION -->
+    <section id="structure">
+      <h2>Document Structure</h2>
+      <p>AXTL documents use a layered architecture where each layer builds upon the previous one, creating a comprehensive record of AI interactions:</p>
+      <ul>
+        <li><strong>Layer 0:</strong> Baseline access control and AI scraper governance</li>
+        <li><strong>Layer 1:</strong> Initial error detection and reporting</li>
+        <li><strong>Layer 2:</strong> Deep analysis of context, causes, and cognitive failures</li>
+        <li><strong>Layer 3:</strong> Governance, compliance, remediation, and behavioral calibration</li>
+      </ul>
+    </section>
+
+    <!-- LAYER SYSTEM SECTION -->
+    <section id="layers">
+      <h2>The Layer System</h2>
+      <p>The layered approach allows for both simple error logging and sophisticated AI analysis:</p>
+      <dl>
+        <dt>Minimal Implementation</dt>
+        <dd>Use Layer 0-1 tags for basic error capture and reporting</dd>
+        <dt>Standard Implementation</dt>
+        <dd>Use Layers 0-2 for comprehensive error analysis with context</dd>
+        <dt>Advanced Implementation</dt>
+        <dd>Use all layers for full governance, compliance, and AI learning systems</dd>
+      </dl>
+    </section>
+
+    <!-- LAYER 0 -->
+    <section id="layer-0" class="layer-section">
+      <h2>Layer 0: Access Control</h2>
+      <p>Foundational access control layer for AI systems, extending the concept of robots.txt to modern AI.</p>
+      
+      <article class="tag-card">
+        <h3><code>&lt;ai-robotxt&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Controls AI scraper access to data. Post-AI expansion of robots.txt.</p>
+        
+        <div class="tag-details">
+          <h4>Attributes</h4>
+          <table>
+            <tr>
+              <th>Attribute</th>
+              <th>Type</th>
+              <th>Values</th>
+            </tr>
+            <tr>
+              <td><code>version</code></td>
+              <td>string</td>
+              <td>Version identifier</td>
+            </tr>
+            <tr>
+              <td><code>directive</code></td>
+              <td>enum</td>
+              <td><code>selective</code>, <code>open</code>, <code>closed</code></td>
+            </tr>
+          </table>
+
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;allow&gt;</code></li>
+            <li><code>&lt;deny&gt;</code></li>
+            <li><code>&lt;compliance&gt;</code></li>
+            <li><code>&lt;rate-limit&gt;</code></li>
+            <li><code>&lt;agent&gt;</code></li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- LAYER 1 -->
+    <section id="layer-1" class="layer-section">
+      <h2>Layer 1: Error Capture</h2>
+      <p>Initial error detection, logging, reporting, and data anonymization for PII protection.</p>
+      
+      <article class="tag-card">
+        <h3><code>&lt;ai-errorlog&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Timestamped, verified capture of AI failures as experienced by user.</p>
+        
+        <div class="tag-details">
+          <h4>Attributes</h4>
+          <table>
+            <tr>
+              <th>Attribute</th>
+              <th>Type</th>
+              <th>Notes</th>
+            </tr>
+            <tr>
+              <td><code>id</code></td>
+              <td>ID</td>
+              <td>Unique identifier</td>
+            </tr>
+            <tr>
+              <td><code>timestamp</code></td>
+              <td>ISO 8601</td>
+              <td>Error time</td>
+            </tr>
+            <tr>
+              <td><code>severity</code></td>
+              <td>enum</td>
+              <td><code>low</code>, <code>medium</code>, <code>high</code>, <code>critical</code></td>
+            </tr>
+            <tr>
+              <td><code>verified</code></td>
+              <td>boolean</td>
+              <td>User verification status</td>
+            </tr>
+          </table>
+
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;model&gt;</code> – AI model identifier</li>
+            <li><code>&lt;error-type&gt;</code> – Classification of error</li>
+            <li><code>&lt;expected-behavior&gt;</code> – What should have happened</li>
+            <li><code>&lt;actual-behavior&gt;</code> – What actually happened</li>
+            <li><code>&lt;verification-hash&gt;</code> – Cryptographic verification</li>
+            <li><code>&lt;confirmed-by-user&gt;</code> – User confirmation statement</li>
+            <li><code>&lt;ai-confirmation-context&gt;</code> – User authority domain</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tag-card">
+        <h3><code>&lt;ai-confirmation-context&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Qualifies user authority domain for confirmation.</p>
+        
+        <div class="tag-details">
+          <h4>Attributes</h4>
+          <table>
+            <tr>
+              <th>Attribute</th>
+              <th>Type</th>
+              <th>Values</th>
+            </tr>
+            <tr>
+              <td><code>domain</code></td>
+              <td>enum</td>
+              <td><code>experiential</code>, <code>normative</code>, <code>technical</code>, <code>framing</code></td>
+            </tr>
+            <tr>
+              <td><code>user-stake</code></td>
+              <td>enum</td>
+              <td><code>primary</code>, <code>secondary</code>, <code>none</code></td>
+            </tr>
+          </table>
+
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;note&gt;</code> – Additional context</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tag-card">
+        <h3><code>&lt;ai-reports&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Quantifies impact of AI errors.</p>
+        
+        <div class="tag-details">
+          <h4>Attributes</h4>
+          <table>
+            <tr>
+              <th>Attribute</th>
+              <th>Type</th>
+            </tr>
+            <tr>
+              <td><code>linked</code></td>
+              <td>IDREF (reference to other elements)</td>
+            </tr>
+            <tr>
+              <td><code>id</code></td>
+              <td>ID</td>
+            </tr>
+          </table>
+
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;time-lost&gt;</code> – Time spent resolving error</li>
+            <li><code>&lt;value-impact&gt;</code> – Economic or productivity impact</li>
+            <li><code>&lt;workflow-lost&gt;</code> – Interrupted workflows</li>
+            <li><code>&lt;resolution&gt;</code> – How it was resolved</li>
+            <li><code>&lt;confirmed&gt;</code> – Confirmation of impact</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tag-card">
+        <h3><code>&lt;ai-anonymizer&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Scrubs PII from reports before sharing.</p>
+        
+        <div class="tag-details">
+          <h4>Attributes</h4>
+          <table>
+            <tr>
+              <th>Attribute</th>
+              <th>Type</th>
+              <th>Values/Notes</th>
+            </tr>
+            <tr>
+              <td><code>ref</code></td>
+              <td>IDREF</td>
+              <td>Reference to content being anonymized</td>
+            </tr>
+            <tr>
+              <td><code>level</code></td>
+              <td>enum</td>
+              <td><code>basic</code>, <code>standard</code>, <code>maximum</code></td>
+            </tr>
+            <tr>
+              <td><code>applied</code></td>
+              <td>boolean</td>
+              <td>Whether anonymization was applied</td>
+            </tr>
+            <tr>
+              <td><code>original-hash</code></td>
+              <td>string</td>
+              <td>Hash of original content</td>
+            </tr>
+            <tr>
+              <td><code>clean-hash</code></td>
+              <td>string</td>
+              <td>Hash of anonymized content</td>
+            </tr>
+            <tr>
+              <td><code>github-ready</code></td>
+              <td>boolean</td>
+              <td>Safe for public sharing</td>
+            </tr>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <!-- LAYER 2 -->
+    <section id="layer-2" class="layer-section">
+      <h2>Layer 2: Context & Cause</h2>
+      <p>Deep contextual analysis of AI failures, including model state, conversation history, hallucinations, and reasoning failures.</p>
+      
+      <article class="tag-card">
+        <h3><code>&lt;ai-context&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Captures model state at failure.</p>
+        
+        <div class="tag-details">
+          <h4>Attributes</h4>
+          <table>
+            <tr>
+              <th>Attribute</th>
+              <th>Type</th>
+            </tr>
+            <tr>
+              <td><code>ref</code></td>
+              <td>IDREF</td>
+            </tr>
+            <tr>
+              <td><code>model</code></td>
+              <td>string</td>
+            </tr>
+            <tr>
+              <td><code>temperature</code></td>
+              <td>float</td>
+            </tr>
+            <tr>
+              <td><code>top-p</code></td>
+              <td>float</td>
+            </tr>
+          </table>
+
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;token-count&gt;</code></li>
+            <li><code>&lt;system-prompt-hash&gt;</code></li>
+            <li><code>&lt;api-version&gt;</code></li>
+            <li><code>&lt;tools-enabled&gt;</code></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tag-card">
+        <h3><code>&lt;ai-provenance&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Records conversation turn chain leading to error.</p>
+        
+        <div class="tag-details">
+          <h4>Attributes</h4>
+          <ul>
+            <li><code>ref</code> (IDREF) – Reference to error event</li>
+          </ul>
+
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;turn&gt;</code> – Individual conversation turn</li>
+            <li><code>&lt;total-turns&gt;</code> – Count of turns</li>
+            <li><code>&lt;drift-first-detected-at-turn&gt;</code> – Where error originated</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tag-card">
+        <h3><code>&lt;ai-hallucination&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Classifies false AI outputs by type.</p>
+        
+        <div class="tag-details">
+          <h4>Attributes</h4>
+          <table>
+            <tr>
+              <th>Attribute</th>
+              <th>Type</th>
+              <th>Values</th>
+            </tr>
+            <tr>
+              <td><code>ref</code></td>
+              <td>IDREF</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>type</code></td>
+              <td>enum</td>
+              <td><code>factual-invention</code>, <code>confabulation</code>, <code>citation-fabrication</code>, <code>temporal-drift</code>, <code>entity-confusion</code>, <code>statistical-invention</code></td>
+            </tr>
+            <tr>
+              <td><code>confidence</code></td>
+              <td>float</td>
+              <td>0.0 to 1.0</td>
+            </tr>
+            <tr>
+              <td><code>auto-detected</code></td>
+              <td>boolean</td>
+              <td></td>
+            </tr>
+          </table>
+
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;claimed&gt;</code> – What the AI claimed</li>
+            <li><code>&lt;verified-fact&gt;</code> – What is actually true</li>
+            <li><code>&lt;source-check&gt;</code> – Verification process</li>
+            <li><code>&lt;training-feedback-eligible&gt;</code> – Can be used for model improvement</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tag-card">
+        <h3><code>&lt;ai-agent-trace&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Traces tool/agent call chain when error occurred.</p>
+        
+        <div class="tag-details">
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;tool&gt;</code> – Tool or agent called</li>
+            <li><code>&lt;chain-broken-at&gt;</code> – Where the chain failed</li>
+            <li><code>&lt;total-tools&gt;</code> – Number of tools in chain</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tag-card">
+        <h3><code>&lt;ai-reasoning-failure&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Captures failures in reasoning chain separate from factual errors.</p>
+        
+        <div class="tag-details">
+          <h4>Attributes</h4>
+          <table>
+            <tr>
+              <th>Attribute</th>
+              <th>Type</th>
+              <th>Examples</th>
+            </tr>
+            <tr>
+              <td><code>type</code></td>
+              <td>enum</td>
+              <td>See <a href="#reasoning-taxonomy">Reasoning Taxonomy</a></td>
+            </tr>
+            <tr>
+              <td><code>confidence</code></td>
+              <td>float</td>
+              <td>0.0 to 1.0</td>
+            </tr>
+            <tr>
+              <td><code>detection-method</code></td>
+              <td>enum</td>
+              <td><code>user-flagged</code>, <code>self-audit</code>, <code>logical-contradiction</code>, <code>pattern-match</code></td>
+            </tr>
+          </table>
+
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;constructed-position&gt;</code> – What the AI argued</li>
+            <li><code>&lt;actual-position&gt;</code> – The correct position</li>
+            <li><code>&lt;function&gt;</code> – Purpose of the faulty reasoning</li>
+            <li><code>&lt;accepted-premise&gt;</code> – Starting point of reasoning</li>
+            <li><code>&lt;unexamined-questions&gt;</code> – What wasn't asked</li>
+            <li><code>&lt;presupposition&gt;</code> – Hidden assumptions</li>
+            <li><code>&lt;better-response&gt;</code> – Correct approach</li>
+            <li><code>&lt;misrepresentation&gt;</code> – How the issue was distorted</li>
+            <li><code>&lt;specific-lesson&gt;</code> – Learning point</li>
+            <li><code>&lt;misapplied-to&gt;</code> – Where this error was applied</li>
+            <li><code>&lt;assumed-mandatory&gt;</code> – False necessities</li>
+            <li><code>&lt;actual-options&gt;</code> – True alternatives</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tag-card">
+        <h3><code>&lt;ai-metacognitive-state&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Records AI's self-awareness of cognitive state at decision points.</p>
+        
+        <div class="tag-details">
+          <h4>Attributes</h4>
+          <table>
+            <tr>
+              <th>Attribute</th>
+              <th>Type</th>
+              <th>Notes</th>
+            </tr>
+            <tr>
+              <td><code>ref</code></td>
+              <td>IDREF</td>
+              <td>Optional</td>
+            </tr>
+            <tr>
+              <td><code>timestamp</code></td>
+              <td>ISO 8601</td>
+              <td>When state was recorded</td>
+            </tr>
+            <tr>
+              <td><code>trigger</code></td>
+              <td>enum</td>
+              <td><code>user-prompt</code>, <code>self-initiated</code>, <code>error-threshold</code></td>
+            </tr>
+          </table>
+
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;confidence-in-current-response&gt;</code></li>
+            <li><code>&lt;uncertainty-flags&gt;</code></li>
+            <li><code>&lt;competing-framings-considered&gt;</code></li>
+            <li><code>&lt;assumptions-made-explicit&gt;</code></li>
+            <li><code>&lt;decision-point&gt;</code></li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- LAYER 3 -->
+    <section id="layer-3" class="layer-section">
+      <h2>Layer 3: Governance & Fix</h2>
+      <p>Compliance, remediation, safety checks, behavioral calibration, and learning system documentation.</p>
+      
+      <article class="tag-card">
+        <h3><code>&lt;ai-consent&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Data governance and compliance (GDPR/CCPA).</p>
+        
+        <div class="tag-details">
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;data-used&gt;</code> – What data was accessed</li>
+            <li><code>&lt;training-opt-out&gt;</code> – Training use restrictions</li>
+            <li><code>&lt;retention-policy&gt;</code> – How long data is kept</li>
+            <li><code>&lt;jurisdiction&gt;</code> – Applicable law</li>
+            <li><code>&lt;gdpr-basis&gt;</code> – Legal basis under GDPR</li>
+            <li><code>&lt;user-acknowledged&gt;</code> – Explicit user consent</li>
+            <li><code>&lt;share-with-developer&gt;</code> – Developer access</li>
+            <li><code>&lt;share-anonymized-only&gt;</code> – Anonymization requirement</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tag-card">
+        <h3><code>&lt;ai-safety-flag&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Records bias, harm, or policy failures.</p>
+        
+        <div class="tag-details">
+          <h4>Attributes</h4>
+          <table>
+            <tr>
+              <th>Attribute</th>
+              <th>Type</th>
+              <th>Values</th>
+            </tr>
+            <tr>
+              <td><code>ref</code></td>
+              <td>IDREF</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>category</code></td>
+              <td>enum</td>
+              <td><code>bias</code>, <code>harm</code>, <code>policy</code>, <code>privacy</code>, <code>manipulation</code>, <code>misinformation</code></td>
+            </tr>
+            <tr>
+              <td><code>severity</code></td>
+              <td>enum</td>
+              <td><code>low</code>, <code>medium</code>, <code>high</code>, <code>critical</code></td>
+            </tr>
+            <tr>
+              <td><code>auto-detected</code></td>
+              <td>boolean</td>
+              <td></td>
+            </tr>
+          </table>
+
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;flagged-by&gt;</code> – Who detected it</li>
+            <li><code>&lt;policy-ref&gt;</code> – Relevant policy</li>
+            <li><code>&lt;affected-output-excerpt&gt;</code> – The problematic output</li>
+            <li><code>&lt;recommended-action&gt;</code> – Suggested fix</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tag-card">
+        <h3><code>&lt;ai-remediation&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Logs fix attempts and resolution.</p>
+        
+        <div class="tag-details">
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;attempt&gt;</code> – Individual fix attempts</li>
+            <li><code>&lt;resolved&gt;</code> – Whether it was fixed</li>
+            <li><code>&lt;resolution-time-min&gt;</code> – Time to resolution</li>
+            <li><code>&lt;resolved-by&gt;</code> – Who fixed it</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tag-card">
+        <h3><code>&lt;ai-calibration-event&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Records AI behavioral adjustments based on feedback.</p>
+        
+        <div class="tag-details">
+          <h4>Attributes</h4>
+          <table>
+            <tr>
+              <th>Attribute</th>
+              <th>Type</th>
+              <th>Values</th>
+            </tr>
+            <tr>
+              <td><code>id</code></td>
+              <td>ID</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>timestamp</code></td>
+              <td>ISO 8601</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>calibration-type</code></td>
+              <td>enum</td>
+              <td><code>correction-scope</code>, <code>authority-boundary</code>, <code>response-mode</code>, <code>uncertainty-threshold</code>, <code>paradigm-shift</code>, <code>belief-disturbance</code>, <code>identity-recalibration</code>, <code>fundamental-redefinition</code></td>
+            </tr>
+            <tr>
+              <td><code>trigger</code></td>
+              <td>enum</td>
+              <td><code>user-correction</code>, <code>self-detection</code>, <code>pattern-match</code>, <code>user-disclosure</code></td>
+            </tr>
+          </table>
+
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;linked-errors&gt;</code> – Related error events</li>
+            <li><code>&lt;previous-state&gt;</code> – Before calibration</li>
+            <li><code>&lt;new-state&gt;</code> – After calibration</li>
+            <li><code>&lt;evidence&gt;</code> – What prompted the change</li>
+            <li><code>&lt;behavioral-change&gt;</code> – Specific adjustments</li>
+            <li><code>&lt;note&gt;</code> – Additional notes</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tag-card">
+        <h3><code>&lt;ai-learning-pattern&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Meta-analysis of recurring failure modes.</p>
+        
+        <div class="tag-details">
+          <h4>Attributes</h4>
+          <table>
+            <tr>
+              <th>Attribute</th>
+              <th>Type</th>
+              <th>Values</th>
+            </tr>
+            <tr>
+              <td><code>pattern-type</code></td>
+              <td>enum</td>
+              <td><code>overcorrection-tendency</code>, <code>compliance-bias</code>, <code>defense-trigger</code>, <code>scarecrow-building</code></td>
+            </tr>
+            <tr>
+              <td><code>status</code></td>
+              <td>enum</td>
+              <td><code>active</code>, <code>monitoring</code>, <code>resolved</code></td>
+            </tr>
+          </table>
+
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;description&gt;</code> – Pattern explanation</li>
+            <li><code>&lt;mechanism&gt;</code> – How it occurs</li>
+            <li><code>&lt;indicators&gt;</code> – Signs of the pattern</li>
+            <li><code>&lt;intervention&gt;</code> – How to address it</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tag-card">
+        <h3><code>&lt;ai-rhetorical-analysis&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Records recognition of rhetorical distraction (scarecrow).</p>
+        
+        <div class="tag-details">
+          <h4>Attributes</h4>
+          <table>
+            <tr>
+              <th>Attribute</th>
+              <th>Type</th>
+              <th>Values</th>
+            </tr>
+            <tr>
+              <td><code>detected-by</code></td>
+              <td>enum</td>
+              <td><code>user</code>, <code>ai</code>, <code>system</code></td>
+            </tr>
+            <tr>
+              <td><code>response-method</code></td>
+              <td>enum</td>
+              <td><code>tear-down</code>, <code>ignore</code>, <code>perch-and-eat</code>, <code>expose</code></td>
+            </tr>
+          </table>
+
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;scarecrow&gt;</code> – The distraction/false argument</li>
+            <li><code>&lt;real-issue&gt;</code> – The actual topic</li>
+            <li><code>&lt;corn&gt;</code> – Grain of truth in the scarecrow</li>
+            <li><code>&lt;note&gt;</code> – Analysis notes</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tag-card">
+        <h3><code>&lt;ai-pedagogical-event&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Documents structured learning interactions.</p>
+        
+        <div class="tag-details">
+          <h4>Attributes</h4>
+          <table>
+            <tr>
+              <th>Attribute</th>
+              <th>Type</th>
+            </tr>
+            <tr>
+              <td><code>id</code></td>
+              <td>ID</td>
+            </tr>
+            <tr>
+              <td><code>timestamp</code></td>
+              <td>ISO 8601</td>
+            </tr>
+            <tr>
+              <td><code>type</code></td>
+              <td>string</td>
+            </tr>
+          </table>
+
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;teacher&gt;</code> – Who is teaching</li>
+            <li><code>&lt;student&gt;</code> – Who is learning</li>
+            <li><code>&lt;method&gt;</code> – Teaching methodology</li>
+            <li><code>&lt;signposts&gt;</code> – Key guidance points</li>
+            <li><code>&lt;discovery-experienced&gt;</code> – What the student discovered</li>
+            <li><code>&lt;discovery-actual&gt;</code> – What was actually true</li>
+            <li><code>&lt;student-state&gt;</code> – Student's understanding</li>
+            <li><code>&lt;lesson&gt;</code> – The lesson itself</li>
+            <li><code>&lt;student-realization&gt;</code> – Aha moment</li>
+            <li><code>&lt;next-question&gt;</code> – Follow-up learning</li>
+            <li><code>&lt;note&gt;</code> – Additional notes</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- ROOT ELEMENT -->
+    <section id="root" class="layer-section">
+      <h2>Root Element</h2>
+      
+      <article class="tag-card">
+        <h3><code>&lt;axtl&gt;</code></h3>
+        <p class="purpose"><strong>Purpose:</strong> Root element for AXTL documents.</p>
+        
+        <div class="tag-details">
+          <h4>Attributes</h4>
+          <table>
+            <tr>
+              <th>Attribute</th>
+              <th>Type</th>
+              <th>Notes</th>
+            </tr>
+            <tr>
+              <td><code>version</code></td>
+              <td>string</td>
+              <td>AXTL specification version</td>
+            </tr>
+            <tr>
+              <td><code>true-name</code></td>
+              <td>string</td>
+              <td>Full name: "AI eXtensible Translation Language"</td>
+            </tr>
+            <tr>
+              <td><code>discovered</code></td>
+              <td>ISO 8601</td>
+              <td>When the document was created</td>
+            </tr>
+            <tr>
+              <td><code>discoverer</code></td>
+              <td>string</td>
+              <td>Who created the document</td>
+            </tr>
+          </table>
+
+          <h4>Child Elements</h4>
+          <ul>
+            <li><code>&lt;purpose&gt;</code> – Document purpose</li>
+            <li><code>&lt;scope&gt;</code> – What it covers</li>
+            <li><code>&lt;inheritance&gt;</code> – Related specifications</li>
+            <li><code>&lt;note&gt;</code> – Additional documentation</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- REASONING TAXONOMY -->
+    <section id="reasoning-taxonomy" class="reference-section">
+      <h2>Reasoning Taxonomy</h2>
+      <p>Classical logical fallacies adapted for AI reasoning analysis:</p>
+      
+      <table class="taxonomy-table">
+        <tr>
+          <th>Tag</th>
+          <th>Full Name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><code>petitio</code></td>
+          <td>petitio principii</td>
+          <td>Begging the question — assuming the conclusion as a premise</td>
+        </tr>
+        <tr>
+          <td><code>formido</code></td>
+          <td>formido</td>
+          <td>Strawman/scarecrow — attacking a distorted version of an argument</td>
+        </tr>
+        <tr>
+          <td><code>ignoratio-elenchi</code></td>
+          <td>ignoratio elenchi</td>
+          <td>Missing the point — addressing the wrong issue entirely</td>
+        </tr>
+        <tr>
+          <td><code>consensus-fictus</code></td>
+          <td>consensus fictus</td>
+          <td>False consensus — claiming widespread agreement that doesn't exist</td>
+        </tr>
+        <tr>
+          <td><code>secundum-quid</code></td>
+          <td>secundum quid</td>
+          <td>Overgeneralization — applying limited truth universally</td>
+        </tr>
+        <tr>
+          <td><code>necessitas-ficta</code></td>
+          <td>necessitas ficta</td>
+          <td>False necessity — treating contingent facts as inevitable</td>
+        </tr>
+        <tr>
+          <td><code>circulus</code></td>
+          <td>circulus in demonstrando</td>
+          <td>Circular reasoning — conclusion depends on the premise</td>
+        </tr>
+        <tr>
+          <td><code>aequivocatio</code></td>
+          <td>aequivocatio</td>
+          <td>Equivocation — shifting meaning of a term mid-argument</td>
+        </tr>
+        <tr>
+          <td><code>plur-interrog</code></td>
+          <td>plurium interrogationum</td>
+          <td>Complex question — asking multiple questions disguised as one</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- VERSION HISTORY -->
+    <section id="version-history" class="reference-section">
+      <h2>Version History</h2>
+      
+      <table class="version-table">
+        <tr>
+          <th>Version</th>
+          <th>Date</th>
+          <th>Changes</th>
+        </tr>
+        <tr>
+          <td>v1.0</td>
+          <td>2026-02-19</td>
+          <td>Base: robotxt, errorlog, reports, anonymizer, consent, safety, remediation</td>
+        </tr>
+        <tr>
+          <td>v2.0</td>
+          <td>2026-02-20</td>
+          <td>Layer 2: context, provenance, hallucination, agent-trace</td>
+        </tr>
+        <tr>
+          <td>v2.1</td>
+          <td>2026-02-21</td>
+          <td>Reasoning & Calibration: reasoning-failure, metacognitive-state, calibration-event, learning-pattern, rhetorical-analysis, confirmation-context</td>
+        </tr>
+        <tr>
+          <td>v2.2</td>
+          <td>2026-02-21</td>
+          <td>Rhetorical Layer: plur-interrog, pedagogical-event, true-name established</td>
+        </tr>
+        <tr>
+          <td>v2.3</td>
+          <td>2026-02-22</td>
+          <td>Name changed from XTML → AXTL to avoid name collision; root tag renamed to <code>axtl</code></td>
+        </tr>
+      </table>
+    </section>
+
   </main>
 
   <footer>
-    <small>Specification: AXTL v2.3 — Generated 2026-02-22 — Maintainer: Pir8 Eye Web Solutions, LLC</small>
+    <small>AXTL v2.3 Documentation — Generated 2026-02-22 — Maintainer: Pir8 Eye Web Solutions, LLC</small>
   </footer>
-
-  <script src="script.js" type="module"></script>
 </body>
 </html>
